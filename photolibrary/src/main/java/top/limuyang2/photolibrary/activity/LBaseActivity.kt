@@ -1,5 +1,7 @@
 package top.limuyang2.photolibrary.activity
 
+import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -8,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import top.limuyang2.photolibrary.LPhotoHelper.Companion.EXTRA_THEME
 import top.limuyang2.photolibrary.R
+import java.util.Locale
 
 /**
  *
@@ -73,6 +76,10 @@ abstract class LBaseActivity<V : ViewBinding> : AppCompatActivity() {
         initData()
     }
 
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(ContextWrapper(newBase?.setAppLocale(Locale.ENGLISH)))
+    }
+
     override fun startActivityForResult(intent: Intent, requestCode: Int) {
         // 传递主题
         intent.putExtra(EXTRA_THEME, intentTheme)
@@ -84,4 +91,12 @@ abstract class LBaseActivity<V : ViewBinding> : AppCompatActivity() {
         intent.putExtra(EXTRA_THEME, intentTheme)
         super.startActivityForResult(intent, requestCode, options)
     }
+}
+
+fun Context.setAppLocale(locale: Locale): Context {
+    Locale.setDefault(locale)
+    val config = resources.configuration
+    config.setLocale(locale)
+    config.setLayoutDirection(locale)
+    return createConfigurationContext(config)
 }
