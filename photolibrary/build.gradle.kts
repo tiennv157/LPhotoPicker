@@ -13,7 +13,7 @@ plugins {
 android {
     namespace = "top.limuyang2.photolibrary"
 
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 21
