@@ -19,13 +19,11 @@
         <activity
             android:name=".activity.LPhotoPickerActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
             android:name=".activity.LPhotoPickerPreviewActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
