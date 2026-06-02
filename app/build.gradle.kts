@@ -4,11 +4,11 @@ plugins {
 
 android {
     namespace = "top.limuyang2.pohotopicker"
-    compileSdk = 36
+    compileSdk = 37
     defaultConfig {
         applicationId = "top.limuyang2.pohotopicker"
-        minSdk = 21
-        targetSdk = 36
+        minSdk = 23
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
