@@ -64,4 +64,4 @@ dependencies {
 
 //---------- maven upload info -----------------------------------
 
-val versionName = "3.2"
+val versionName = "3.2.1"
